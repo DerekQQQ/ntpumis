@@ -1,0 +1,25 @@
+{
+  "name": "ntpumis_en",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yonaichin/ntpumis_en",
+  "authors": [
+    "Naichin <yonaichin@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "font-awesome": "~4.2.0",
+    "lodash": "~2.4.1",
+    "react": "~0.10.0",
+    "fullcalendar": "~2.2.6",
+    "skel": "~2.2.1"
+  }
+}
