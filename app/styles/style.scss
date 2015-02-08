@@ -900,18 +900,29 @@
                         vertical-align: middle;
                 }
 
+
                         #header nav > ul {
                                 list-style: none;
                                 margin: 0;
                                 padding-left: 0;
                         }
-
+                                #header nav > ul:after{
+                                        content:"";
+                                        clear:both;
+                                        display:block
+                                }
                                 #header nav > ul > li {
+                                        float:left;
                                         border-radius: 4px;
                                         display: inline-block;
                                         margin-left: 1.5em;
                                         padding-left: 0;
                                 }
+                                #header nav > ul > li:hover {
+                                }
+                                        #header nav > ul > li:hover a{
+                                                coloor: #fff;
+                                        }
 
                                         #header nav > ul > li a {
                                                 -moz-transition: color 0.2s ease-in-out;
@@ -940,6 +951,23 @@
                                                 position: relative;
                                                 top: -0.075em;
                                                 vertical-align: middle;
+                                        }
+                                        #header nav > ul > li.active{
+                                                background:#3ac984;
+                                        }
+                                        #header nav > ul > li.active a {
+                                                color:white;
+                                        }
+                                #header nav > ul > li > ul{
+                                        display:none;
+                                        margin-top: -50px;
+                                        list-style-type:none;
+                                }
+                                        #header nav > ul > li > ul > li{
+                                                height:50px;
+                                        }
+                                        #header nav > ul > li:hover > ul {
+                                                display:block;
                                         }
 
                 #header .container {
@@ -1089,3 +1117,6 @@
                                         margin-left: 0;
                                         padding-left: 0;
                                 }
+.list{
+  text-align:left;
+}

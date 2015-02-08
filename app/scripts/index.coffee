@@ -33,38 +33,41 @@ Content = React.createClass
     <section id="two" className="wrapper style2 align-center">
       <div className="container">
         <header>
-          <h2>Lorem ipsum dolor sit</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem.</p>
+          <h2>最新消息</h2>
+          <p>Latest News</p>
         </header>
         <div className="row">
-          <section className="feature 6u 12u$(small)">
+          <section className="feature 4u 12u$(small)">
             <img className="image fit" src="images/pic01.jpg" alt="" />
-            <h3 className="title">Lorem ipsum dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsa voluptate, quae quibusdam. Doloremque similique, reiciendis sit quibusdam aperiam? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h3 className="title">所上公告 ＆ 其他公告</h3>
+             <div className="list" >
+               <p><i className="fa fa-thumb-tack"></i> TBI2014 臺灣商管與資訊研討會</p>
+               <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
+               <p><i className="fa fa-thumb-tack"></i> 本所一貫修讀學、碩士學位辦法</p>
+            </div>
+            <a href="#" className="button alt small">了解更多</a>
           </section>
-          <section className="feature 6u$ 12u$(small)">
+          <section className="feature 4u 12u$(small)">
             <img className="image fit" src="images/pic02.jpg" alt="" />
-            <h3 className="title">Esse, fugiat, in</h3>
-            <p>Natus perspiciatis fugit illum porro iusto fuga nam voluptas minima voluptates deserunt, veniam reiciendis harum repellat necessitatibus. Animi, adipisci qui. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h3 className="title">學術公告</h3>
+            <div className="list" >
+               <p><i className="fa fa-thumb-tack"></i> TBI2014 臺灣商管與資訊研討會</p>
+               <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
+               <p><i className="fa fa-thumb-tack"></i> 本所一貫修讀學、碩士學位辦法</p>
+            </div>
+            <a href="#" className="button alt small">了解更多</a>
           </section>
-          <section className="feature 6u 12u$(small)">
+          <section className="feature 4u$ 12u$(small)">
             <img className="image fit" src="images/pic03.jpg" alt="" />
-            <h3 className="title">Voluptates, repudiandae, dolor</h3>
-            <p>Voluptatibus repellendus tempora, quia! Consequuntur atque, rerum quis, ullam labore officiis ipsa beatae dolore, assumenda eos harum repudiandae, qui ab! Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </section>
-          <section className="feature 6u$ 12u$(small)">
-            <img className="image fit" src="images/pic04.jpg" alt="" />
-            <h3 className="title">Eveniet, reiciendis, veniam</h3>
-            <p>Rem nulla molestiae inventore quibusdam repudiandae doloremque eveniet ullam, qui autem possimus saepe laudantium numquam sapiente vel. Repudiandae, nihil tempore. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h3 className="title">所上活動 ＆ 專題演講 </h3>
+            <div className="list" >
+               <p><i className="fa fa-thumb-tack"></i> TBI2014 臺灣商管與資訊研討會</p>
+               <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
+               <p><i className="fa fa-thumb-tack"></i> 本所一貫修讀學、碩士學位辦法</p>
+            </div>
+            <a href="#" className="button alt small">了解更多</a>
           </section>
         </div>
-        <footer>
-          <ul className="actions">
-            <li>
-              <a href="#" className="button alt big">Learn More</a>
-            </li>
-          </ul>
-        </footer>
       </div>
     </section>
     </div>
