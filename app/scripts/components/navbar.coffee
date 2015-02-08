@@ -1,10 +1,8 @@
-FileServer_HOST = process.env.FileServer_HOST
 React = require 'react'
 Navbar = React.createClass
   displayName: 'Navbar'
   render : ->
-    host =  FileServer_HOST
-
+    host =  'http://ntpumis-files2015.ddns.net/'
     <header id="header">
       <h1><a href="index.html">NTPU MIS</a></h1>
       <nav id="nav">
