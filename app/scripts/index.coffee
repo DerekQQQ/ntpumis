@@ -3,33 +3,11 @@ React = require 'react'
 Navbar = require './components/navbar'
 Banner = require './components/banner'
 Footer = require './components/footer'
-
+Calendar = require './components/calendar.coffee'
 Content = React.createClass
   displayName:'Content'
   render: ->
     <div>
-    <section id="one" className="wrapper style1 align-center">
-      <div className="container">
-        <header>
-          <h2>Consectetur adipisicing elit</h2>
-          <p>Lorem ipsum dolor sit amet adipisicing elit. Delectus consequatur sed tempus.</p>
-        </header>
-        <div className="row 200%">
-          <section className="4u 12u$(small)">
-            <i className="icon big rounded fa-clock-o"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
-          </section>
-          <section className="4u 12u$(small)">
-            <i className="icon big rounded fa-comments"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime molestiae.</p>
-          </section>
-          <section className="4u$ 12u$(small)">
-            <i className="icon big rounded fa-user"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
-          </section>
-        </div>
-      </div>
-    </section>
     <section id="two" className="wrapper style2 align-center">
       <div className="container">
         <header>
@@ -65,7 +43,7 @@ Content = React.createClass
                <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
                <p><i className="fa fa-thumb-tack"></i> 本所一貫修讀學、碩士學位辦法</p>
             </div>
-            <a href="#" className="button alt small">了解更多</a>
+            <a href="./news.html#event" className="button alt small">了解更多</a>
           </section>
         </div>
       </div>
@@ -76,7 +54,7 @@ Main = React.createClass
   render: ->
     <div>
       <Navbar />
-      <Banner />
+      <Banner bannerStyle='welcome'/>
       <Content />
       <Footer />
     </div>

@@ -1,11 +1,11 @@
 `/** @jsx React.DOM */`
-console.log 'calendar loaded'
 React = require('react')
 Calendar = React.createClass
   displayName : 'Calendar'
   componentDidMount : ->
     $calendar = $(@refs.calendar.getDOMNode())
     $calendar.fullCalendar(
+      lang:'zh-tw'
       header:
         left:'prev,next today'
         center:'title'
@@ -16,7 +16,7 @@ Calendar = React.createClass
       events: [
         {
           title: "All Day E2vent"
-          start: "2015-1-01"
+          start: "2015-2-01"
           description:"hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
           allDay:true
         }
