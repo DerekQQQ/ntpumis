@@ -7,6 +7,8 @@ Calendar = require './components/calendar.coffee'
 ReactBootstrap = require('react-bootstrap')
 PanelGroup = ReactBootstrap.PanelGroup
 Panel = ReactBootstrap.Panel
+TabbedArea = ReactBootstrap.TabbedArea
+TabPane = ReactBootstrap.TabPane
 posts = [{"id":1,"title":"title1","description":"discription1"},{"id":2,"title":"title2","description":"discription2"},{"id":3,"title":"title3","description":"discription3"}]
 
 
@@ -34,16 +36,16 @@ Thread = React.createClass
     @props.setDetail($target.data().listDetail)
   render:->
     listData = @props.listData.map (val,idx)=>
-       <li><i className="fa fa-thumb-tack"></i> <a id={val.id} data-list-detail={JSON.stringify(val)} onClick={this.clickHandler}>{val.title}</a></li>
-    <section className="feature 7u 12u$(small)">
-      <h3 className="title">所上公告</h3>
+       <li><i className="fa fa-thumb-tack"></i> {val.title} <button className="btn btn-sm btn-success pull-right" id={val.id} data-list-detail={JSON.stringify(val)} onClick={this.clickHandler}>查看</button></li>
+
+    <div>
+      <h3 className="title">{@props.title}</h3>
       <div className="list">
          <ul className="alt">
          {listData}
          </ul>
       </div>
-    </section>
-
+    </div>
 
 Detail = React.createClass
   displayName:'Detail'
@@ -72,8 +74,22 @@ List = React.createClass
           <p>Latest News</p>
         </header>
         <div className="row">
-          <Thread listData={posts}
-          setDetail={this.setListHandler}/>
+
+          <section className="feature 7u 12u$(small)">
+          <TabbedArea>
+            <TabPane eventKey={1} tab="所務公告">
+                <Thread listData={posts}
+                        setDetail={this.setListHandler}
+                        title="所務公告"/>
+            </TabPane>
+            <TabPane eventKey={2} tab="學術公告">
+                <Thread listData={posts}
+                        setDetail={this.setListHandler}
+                        title="學術公告"/>
+            </TabPane>
+          </TabbedArea>
+          </section>
+
           <Detail listDetail={@state.listData} />
         </div>
       </div>

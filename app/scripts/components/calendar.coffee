@@ -16,14 +16,14 @@ Calendar = React.createClass
       events: [
         {
           title: "All Day E2vent"
-          start: "2015-2-01"
+          start: "2015-02-01"
           description:"hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
           allDay:true
         }
         {
           title: "Long Event"
-          start: "2014-12-07"
-          end: "2014-12-10"
+          start: "2015-02-07"
+          end: "2015-02-10"
         }
         {
           id: 999
