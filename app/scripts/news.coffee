@@ -107,13 +107,11 @@ Content = React.createClass
 
 
 Main = React.createClass
-  displayName:'News'
-  render: ->
+  displayName:'NEWS'
+  render:->
     <div>
-      <Navbar />
       <Banner/>
       <Content />
-      <Footer />
     </div>
-module.exports = React.render(Main(), document.querySelector('#app'))
-
+#module.exports = React.render(Main(), document.querySelector('#app'))
+module.exports = Main

@@ -4,6 +4,7 @@ Navbar = require './components/navbar'
 Banner = require './components/banner'
 Footer = require './components/footer'
 Calendar = require './components/calendar.coffee'
+PAGE_News = require './news.coffee'
 ReactBootstrap = require 'react-bootstrap'
 Modal = ReactBootstrap.Modal
 ModalTrigger = ReactBootstrap.ModalTrigger
@@ -18,10 +19,11 @@ DetailModal = React.createClass
        <button className="button small" onClick={this.props.onRequestHide}>close</button>
     </div>
     </Modal>
-Content = React.createClass
-  displayName:'Content'
+Index = React.createClass
+  displayName:'INDEX'
   render: ->
     <div>
+    <Banner bannerStyle='welcome'/>
     <section id="latestNews" className="wrapper style2 align-center">
       <div className="container">
         <header>
@@ -33,7 +35,7 @@ Content = React.createClass
             <img className="image fit" src="images/pic01.jpg" alt="" />
             <h3 className="title">所上公告 ＆ 其他公告</h3>
              <div className="list" >
-               <ModalTrigger modal={<DetailModal container={this} />} >
+               <ModalTrigger modal={<DetailModal onRequestHide container={this} />} >
                   <a href="#post_1"><i className="fa fa-thumb-tack"></i> TBI2014 臺灣商管與資訊研討會</a>
                </ModalTrigger>
                <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
@@ -66,12 +68,22 @@ Content = React.createClass
     </section>
     </div>
 Main = React.createClass
-  displayName:'Index'
+  displayName:'Main'
+  getInitialState:->
+    'CURRENT_PAGE':'NEWS'
+  switchPageHandler:(page)->
+    @setState
+      'CURRENT_PAGE':page
   render: ->
+   switch @state.CURRENT_PAGE
+     when 'INDEX'then renderPage = <Index />
+     when 'NEWS' then renderPage = <PAGE_News />
+
+
+
     <div>
-      <Navbar />
-      <Banner bannerStyle='welcome'/>
-      <Content />
+      <Navbar switchPage={this.switchPageHandler}/>
+      {renderPage}
       <Footer />
     </div>
 module.exports = React.render(Main(), document.querySelector('#app'))
