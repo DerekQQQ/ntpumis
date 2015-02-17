@@ -41,7 +41,7 @@ Content = React.createClass
             </div>
             <a href="#" className="button alt small">了解更多</a>
           </section>
-          <section id="post_2"className="feature 4u 12u$(small)">
+          <section id="post_2" className="feature 4u 12u$(small)">
             <img className="image fit" src="images/pic02.jpg" alt="" />
             <h3 className="title">學術公告</h3>
             <div className="list" >
