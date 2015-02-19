@@ -12,7 +12,7 @@ Index = require './index'
 Main = React.createClass
   displayName:'Main'
   getInitialState:->
-    'CURRENT_PAGE':'NEWS'
+    'CURRENT_PAGE':'INDEX'
   switchPageHandler:(page)->
     @setState
       'CURRENT_PAGE':page
