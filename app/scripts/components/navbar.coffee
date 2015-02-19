@@ -1,4 +1,6 @@
 React = require 'react'
+Router = require 'react-router'
+Link = Router.Link
 Navbar = React.createClass
   displayName: 'Navbar'
   eventHandler:(e)->
@@ -10,8 +12,8 @@ Navbar = React.createClass
       <h1><a href="index.html">NTPU MIS</a></h1>
       <nav id="nav">
         <ul>
-          <li><a href="#" data-page="INDEX" onClick={this.eventHandler}>首頁</a></li>
-          <li><a href="#" data-page="NEWS" onClick={this.eventHandler}>最新消息</a></li>
+          <li><Link to="index">首頁</Link></li>
+          <li><Link to="news">最新消息</Link></li>
 
           <li><a href="#">本所簡介</a></li>
           <li><a href="#">學術研究</a></li>

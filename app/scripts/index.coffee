@@ -1,4 +1,6 @@
 React = require 'react'
+Router = require 'react-router'
+Link = Router.Link
 Banner = require './components/banner'
 ReactBootstrap = require 'react-bootstrap'
 Modal = ReactBootstrap.Modal
@@ -57,7 +59,7 @@ Index = React.createClass
               <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:2,title:'title2'})}>Dolor pulvinar etiam magna etiam. </a> </li>
               <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:3,title:'title3'})}>Dolor pulvinar etiam magna etiam. </a> </li>
             </ul>
-            <a href="#" className="button alt small">了解更多</a>
+            <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
           <section className="feature 4u 12u$(small)">
             <img className="image fit" src="images/pic02.jpg" alt="" />
@@ -67,7 +69,7 @@ Index = React.createClass
               <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:2,title:'title2'})}>Dolor pulvinar etiam magna etiam. </a> </li>
               <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:3,title:'title3'})}>Dolor pulvinar etiam magna etiam. </a> </li>
             </ul>
-            <a href="#" className="button alt small">了解更多</a>
+            <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
           <section className="feature 4u$ 12u$(small)">
             <img className="image fit" src="images/pic03.jpg" alt="" />
@@ -77,7 +79,7 @@ Index = React.createClass
                <p><i className="fa fa-thumb-tack"></i> 恭禧汪志堅老師、陳宗天老師、溫演老師及何政勳老師獲得獲得103年度學術研究獎助</p>
                <p><i className="fa fa-thumb-tack"></i> 本所一貫修讀學、碩士學位辦法</p>
             </div>
-            <a href="./news.html#event" className="button alt small">了解更多</a>
+            <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
         </div>
       </div>
