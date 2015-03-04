@@ -11,11 +11,18 @@ Footer = require './components/footer'
 News = require './news'
 Index = require './index'
 NotFound = require './components/404'
+
+Teacher = require './service/teacher'
+
 Main = React.createClass
+  displayName:'Main'
+  getInitialState:->
+    TEACHER_LIST:Teacher.getList()
   render:->
+    console.log 'Main Render'
     <div>
       <Navbar />
-      <RouteHandler/>
+      <RouteHandler TeacherList={@state.TEACHER_LIST}/>
       <Footer />
     </div>
 routes =
