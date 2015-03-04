@@ -11,7 +11,7 @@ NTPU_MIS
 # Install
 
 ```shell
-npm i && bower i && bundle install
+npm install
 ```
 
 # How to run it?

@@ -4,7 +4,8 @@
   "description": "ntpumis",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "postinstall":"bower install & bundle install"
   },
   "repository": {
     "type": "git",
