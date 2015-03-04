@@ -1,15 +1,19 @@
 React = require 'react'
+Router = require 'react-router'
+Link = Router.Link
 Navbar = React.createClass
   displayName: 'Navbar'
+  eventHandler:(e)->
+    $target = $(e.target)
+    @props.switchPage $target.data().page
   render : ->
     host =  'http://ntpumis-files2015.ddns.net/'
     <header id="header">
       <h1><a href="index.html">NTPU MIS</a></h1>
       <nav id="nav">
         <ul>
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="news.html">最新消息</a></li>
-
+          <li><Link to="index">首頁</Link></li>
+          <li><Link to="news">最新消息</Link></li>
           <li><a href="#">本所簡介</a></li>
           <li><a href="#">學術研究</a></li>
           <li><a href="#">招生資訊</a></li>
