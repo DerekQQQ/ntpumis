@@ -1,4 +1,4 @@
-React = require 'react'
+React = require 'react/addons'
 Banner = React.createClass
   displayName: 'Banner'
   render : ->

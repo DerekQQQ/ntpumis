@@ -13,13 +13,24 @@ PostDetail = React.createClass
   componentDidMount:->
     console.log 'componentDidMount'
     $(@getDOMNode()).hide().slideDown()
-  clickHandler:->
+  componentWillUpdate:->
+    console.log 'componentWillUpdate'
     $(@getDOMNode()).slideUp()
+  componentDidUpdate:->
+    console.log 'componentDidUpdate'
+    $(@getDOMNode()).slideDown()
+  clickHandler:->
+    console.log $(@getDOMNode())
     @props.disableDetail()
   render: ->
     <div >
-      <h4> 公告內容 <i className="fa fa-times pull-right"  onClick={@clickHandler}></i></h4>
-      <blockquote className="list">{@props.currentDetail.title}</blockquote>
+      <h4> 公告內容 <i className="fa fa-times pull-right ios_clickable"  onClick={@clickHandler}></i></h4>
+      <blockquote className="list">
+        <p>標題： {@props.currentDetail.title}</p>
+        <p>日期： {@props.currentDetail.created_at}</p>
+        <p>截止日期： {@props.currentDetail.end_date}</p>
+        <pre>{_replaceCKEditorTag(@props.currentDetail.description_text)} </pre>
+      </blockquote>
 
 
     </div>
@@ -41,6 +52,12 @@ Index = React.createClass
       when true then postDetail = <PostDetail disableDetail={@disableDetailHandler} currentDetail={@state.currentDetail}/>
       when false then postDetail = null
 
+    postsGeneral = $.map @props.InitialPosts.general,(val)=>
+      <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
+
+    postsConference = $.map @props.InitialPosts.conference,(val)=>
+      <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
+
     <div>
     <Banner bannerStyle='welcome'/>
     <section id="latestNews" className="wrapper style2 align-center">
@@ -53,11 +70,9 @@ Index = React.createClass
         <div className="row modal-container">
           <section id="post_1" className="feature 4u 12u$(small)">
             <img className="image fit" src="images/pic01.jpg" alt="" />
-            <h3 className="title">所上公告 ＆ 其他公告</h3>
+            <h3 className="title">所上公告</h3>
              <ul className="alt list">
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:1,title:'title1'})}>Dolor pulvinar etiam magna etiam. </a> </li>
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:2,title:'title2'})}>Dolor pulvinar etiam magna etiam. </a> </li>
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:3,title:'title3'})}>Dolor pulvinar etiam magna etiam. </a> </li>
+               {postsGeneral}
             </ul>
             <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
@@ -65,9 +80,7 @@ Index = React.createClass
             <img className="image fit" src="images/pic02.jpg" alt="" />
             <h3 className="title">學術公告</h3>
             <ul className="alt list">
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:1,title:'title1'})}>Dolor pulvinar etiam magna etiam. </a> </li>
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:2,title:'title2'})}>Dolor pulvinar etiam magna etiam. </a> </li>
-              <li><span className="label label-info"> 2015-02-02</span>  <a onClick={@detailHandler} data-detail={JSON.stringify({id:3,title:'title3'})}>Dolor pulvinar etiam magna etiam. </a> </li>
+               {postsConference}
             </ul>
             <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
@@ -86,3 +99,6 @@ Index = React.createClass
     </section>
     </div>
 module.exports = Index
+
+_replaceCKEditorTag =(str) ->
+  str.replace(/&nbsp;/gi,' ')

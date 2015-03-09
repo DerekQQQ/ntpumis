@@ -13,16 +13,18 @@ Index = require './index'
 NotFound = require './components/404'
 
 Teacher = require './service/teacher'
-
+Post = require './service/post.coffee'
 Main = React.createClass
   displayName:'Main'
   getInitialState:->
     TEACHER_LIST:Teacher.getList()
+    INITIAL_POST:Post.getList()
   render:->
-    console.log 'Main Render'
     <div>
       <Navbar />
-      <RouteHandler TeacherList={@state.TEACHER_LIST}/>
+      <RouteHandler TeacherList={@state.TEACHER_LIST}
+                    PostList={@state.INITIAL_POST.posts_dataset}
+                    InitialPosts={@state.INITIAL_POST.initial_posts}/>
       <Footer />
     </div>
 routes =

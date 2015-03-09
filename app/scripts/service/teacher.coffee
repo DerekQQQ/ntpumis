@@ -1,4 +1,4 @@
-API_HOST = process.env.API_HOST
+API_HOST = 'http://ntpumis2015.ddns.net:8080/'
 teacher =
   getList :(locale='zh-tw') ->
     list = {}

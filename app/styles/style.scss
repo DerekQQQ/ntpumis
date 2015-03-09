@@ -863,7 +863,20 @@
                 background-color: transparent;
                 left: 0;
                 position: absolute;
+                color:#3ba666;
                 top: 0;
+                height:65px;
+                transition:background-color 1s,height 1s,color 1s,margin-top 1s;
+            &.fixedsticky-on{
+                z-index:20000;
+                width:100%;
+                position:fixed;
+                background-color:#3ba666;
+                color:#888;
+                margin-top:-15px;
+                opacity:1;
+                height:65px;
+            }
         }
 
         #header {

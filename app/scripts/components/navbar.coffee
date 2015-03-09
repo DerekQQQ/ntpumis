@@ -1,14 +1,18 @@
-React = require 'react'
+React = require 'react/addons'
+PureRenderMixin = require('react/addons').addons.PureRenderMixin
 Router = require 'react-router'
 Link = Router.Link
 Navbar = React.createClass
   displayName: 'Navbar'
+  mixins: [PureRenderMixin]
+  componentDidMount:->
+    $(@getDOMNode()).fixedsticky()
   eventHandler:(e)->
     $target = $(e.target)
     @props.switchPage $target.data().page
   render : ->
     host =  'http://ntpumis-files2015.ddns.net/'
-    <header id="header">
+    <header id="header" className="fixedsticky">
       <h1><a href="index.html">NTPU MIS</a></h1>
       <nav id="nav">
         <ul>

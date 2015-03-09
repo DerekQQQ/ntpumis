@@ -1,5 +1,5 @@
 `/** @jsx React.DOM */`
-React = require('react')
+React = require 'react/addons'
 Calendar = React.createClass
   displayName : 'Calendar'
   componentDidMount : ->
