@@ -10,6 +10,7 @@ Navbar = require './components/navbar'
 Footer = require './components/footer'
 News = require './news'
 Index = require './index'
+Introduction = require './introduction'
 NotFound = require './components/404'
 
 Teacher = require './service/teacher'
@@ -30,6 +31,7 @@ Main = React.createClass
 routes =
   <Route name="index" path="/" handler={Main}>
     <Route name="news" handler={News}/>
+    <Route name="introduction" handler={Introduction}/>
     <DefaultRoute handler={Index}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
