@@ -7,16 +7,34 @@ Banner = require './components/banner'
 ReactBootstrap = require 'react-bootstrap'
 
 TeachersList = React.createClass
-        displayName:'TeachersList'
-        render:->
-                console.log @props.TeacherList
-                teacherList = @props.TeacherList.map (val,idx)=>
-                      <table className="left" ><tbody><tr><td rowSpan="4" width="81" className="mid"><img width="120" src={val.image_url} /></td><td width="199">{val.name}&nbsp{val.title}</td><td colSpan="2">辦公室：{val.office}    </td></tr><tr><td>E-mail：{val.email}</td><td width="176">電話：{val.tel}</td><td width="124">校內分機：{val.extension}</td></tr><tr><td colSpan="3">學歷：{val.degree}</td></tr><tr><td colSpan="3">專長領域：{val.domain}</td></tr></tbody></table>
-                <div>
-                        {teacherList}
-                        <table className="left" ><tbody><tr><td width="199">江義平 教授</td><td colSpan="2">辦公室：法律學院8樓29室
-                                        </td><td rowSpan="4" width="81" className="mid"><img src="images/pic09.jpg" alt="" /></td></tr><tr><td>知識暨視覺化系統研究</td><td width="176">電話：(02)8674-1111</td><td width="124">校內分機：67719</td></tr><tr><td colSpan="3">學歷：國立臺灣大學資管博士</td></tr><tr><td colSpan="3">專長領域：雲端運算、行動商務技術、RFID整合應用、無線通訊網路</td></tr></tbody></table>
-                </div>
+  displayName:'TeachersList'
+  render:->
+    teacherList = @props.TeacherList.map (val,idx)=>
+      if idx%2 is 0
+        <p className="12u$ list">
+          <span className="image left">
+            <img src={val.image_url} className="teacher_icon" />
+          </span>
+          <br><b>{val.name}</b> <i>{val.title}</i></br>
+          <br>{val.office}</br>
+          <br>{val.email}</br>
+          <br>{val.degree}</br>
+          <br>{val.domain}</br>
+        </p>
+      else
+        <p className="12u$ list">
+          <span className="image right">
+            <img src={val.image_url} className="teacher_icon" />
+          </span>
+          <br><b>{val.name}</b> <i>{val.title}</i></br>
+          <br>{val.office}</br>
+          <br>{val.email}</br>
+          <br>{val.degree}</br>
+          <br>{val.domain}</br>
+        </p>
+    <div>
+      {teacherList}
+    </div>
 About = React.createClass
         displayName:'About'
         render:->
@@ -89,17 +107,14 @@ Faculty = React.createClass
         displayName:'Faculty'
         render:->
                 <section id="about" className="wrapper style2 align-center">
-                <div>
-                        <header>
-                                <h2>師資與研究室</h2>
-                        </header>
-                        <blockquote>
-                        本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，以及行政人員1名。
-                        </blockquote>
-                        <h3>專任教師</h3>
-                        <TeachersList TeacherList={@props.TeacherList} />
-                        <p><span className="image right"><img src="images/pic09.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-                </div>
+                  <header>
+                    <h2>師資與研究室</h2>
+                  </header>
+                  <blockquote>
+                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，以及行政人員1名。
+                  </blockquote>
+                  <h3>專任教師</h3>
+                  <TeachersList TeacherList={@props.TeacherList} />
                 </section>
 
 
