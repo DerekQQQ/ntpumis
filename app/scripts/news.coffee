@@ -1,4 +1,4 @@
-# @jsx React.DOM
+# @jsx react.dom
 React = require 'react'
 Navbar = require './components/navbar'
 Banner = require './components/banner'
@@ -9,7 +9,7 @@ PanelGroup = ReactBootstrap.PanelGroup
 Panel = ReactBootstrap.Panel
 TabbedArea = ReactBootstrap.TabbedArea
 TabPane = ReactBootstrap.TabPane
-posts = [{"id":1,"title":"title1","description":"discription1"},{"id":2,"title":"title2","description":"discription2"},{"id":3,"title":"title3","description":"discription3"}]
+Label = ReactBootstrap.Label
 
 
 Event = React.createClass
@@ -36,32 +36,34 @@ Thread = React.createClass
     @props.setDetail($target.data().listDetail)
   render:->
     listData = @props.listData.map (val,idx)=>
-       <li><i className="fa fa-thumb-tack"></i> {val.title} <button className="btn btn-sm btn-success pull-right" id={val.id} data-list-detail={JSON.stringify(val)} onClick={this.clickHandler}>查看</button></li>
+       <tr className="ios_clickable" data-list-detail={JSON.stringify(val)} onClick={this.clickHandler}><td>{val.created_at.substr(5)}</td><td data-list-detail={JSON.stringify(val)} onClick={this.clickHandler}>{val.title}</td></tr>
 
     <div>
-      <h3 className="title">{@props.title}</h3>
       <div className="list">
-         <ul className="alt">
+         <table className="alt">
          {listData}
-         </ul>
+         </table>
       </div>
     </div>
 
 Detail = React.createClass
   displayName:'Detail'
   render:->
+    attachment = <a className="pull-right" target="_blank" href={@props.listDetail.download_link}><i className="fa fa-download"> 附件下載</i></a> if not  _.isEmpty(@props.listDetail.download_link)
+
     <section id="detail" className="feature 5u 12u$(small)">
       <h3 className="title">公告內容</h3>
       <div className="list">
-      <p><b>ID : </b>{@props.listDetail.id}</p>
-      <p><b>TITLE : </b>{@props.listDetail.title}</p>
-      <p><b>DESCRIPTION : </b>{@props.listDetail.description}</p>
+      <h4>{@props.listDetail.title}</h4>
+      <p>{@props.listDetail.created_at}</p>
+      <pre>{@props.listDetail.description_text}</pre>
+      {attachment}
       </div>
     </section>
 List = React.createClass
   displayName:'List'
   getInitialState: ->
-      'listData':posts[0]
+      'listData':@props.PostList.general[0]
   setListHandler:(theList)->
     @setState
       'listData':theList
@@ -76,16 +78,21 @@ List = React.createClass
         <div className="row">
 
           <section className="feature 7u 12u$(small)">
-          <TabbedArea>
+          <TabbedArea animation={false}>
             <TabPane eventKey={1} tab="所務公告">
-                <Thread listData={posts}
+                <Thread listData={@props.PostList.general}
                         setDetail={this.setListHandler}
                         title="所務公告"/>
             </TabPane>
             <TabPane eventKey={2} tab="學術公告">
-                <Thread listData={posts}
+                <Thread listData={@props.PostList.conference}
                         setDetail={this.setListHandler}
                         title="學術公告"/>
+            </TabPane>
+            <TabPane eventKey={3} tab="所友會公告">
+                <Thread listData={@props.PostList.alumni}
+                        setDetail={this.setListHandler}
+                        title="所友會公告"/>
             </TabPane>
           </TabbedArea>
           </section>
@@ -100,7 +107,7 @@ Content = React.createClass
 
   render: ->
     <div>
-    <List />
+    <List PostList={@props.PostList}/>
     <Event />
     </div>
 
@@ -111,7 +118,7 @@ Main = React.createClass
   render:->
     <div>
       <Banner/>
-      <Content />
+      <Content PostList={@props.PostList}/>
     </div>
 #module.exports = React.render(Main(), document.querySelector('#app'))
 module.exports = Main
