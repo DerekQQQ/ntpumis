@@ -23,7 +23,7 @@ Event = React.createClass
         </header>
         <div className="row">
           <section className="feature 8 12u$(small)">
-            <Calendar />
+            <Calendar EventList={@props.EventList}/>
           </section>
         </div>
       </div>
@@ -108,7 +108,7 @@ Content = React.createClass
   render: ->
     <div>
     <List PostList={@props.PostList}/>
-    <Event />
+    <Event EventList={@props.EventList}/>
     </div>
 
 
@@ -118,7 +118,7 @@ Main = React.createClass
   render:->
     <div>
       <Banner/>
-      <Content PostList={@props.PostList}/>
+      <Content PostList={@props.PostList} EventList={@props.EventList}/>
     </div>
 #module.exports = React.render(Main(), document.querySelector('#app'))
 module.exports = Main

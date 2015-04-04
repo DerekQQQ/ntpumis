@@ -1,7 +1,18 @@
 `/** @jsx React.DOM */`
 React = require 'react/addons'
+ReactBootstrap = require 'react-bootstrap'
+Modal = ReactBootstrap.Modal
+OverlayMixin = ReactBootstrap.OverlayMixin
+Button = ReactBootstrap.Button
 Calendar = React.createClass
   displayName : 'Calendar'
+  mixins:[OverlayMixin]
+  getInitialState:->
+    isModalOpen:false
+  handleToggle:(data)->
+    @setState
+      isModalOpen: !@state.isModalOpen
+      modalContent: data
   componentDidMount : ->
     $calendar = $(@refs.calendar.getDOMNode())
     $calendar.fullCalendar(
@@ -11,70 +22,24 @@ Calendar = React.createClass
         center:'title'
         right: 'month,agendaWeek,agendaDay'
       editable:false
-      eventClick:(event, jsEvent, view)->
-        console.log event
-      events: [
-        {
-          title: "All Day E2vent"
-          start: "2015-02-01"
-          description:"hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
-          allDay:true
-        }
-        {
-          title: "Long Event"
-          start: "2015-02-07"
-          end: "2015-02-10"
-        }
-        {
-          id: 999
-          title: "Repeating Event"
-          start: "2014-12-09T16:00:00"
-        }
-        {
-          id: 999
-          title: "Repeating Event"
-          start: "2014-12-16T16:00:00"
-        }
-        {
-          title: "Conference"
-          start: "2014-12-12"
-          end: "2014-12-13"
-        }
-        {
-          title: "Meeting"
-          start: "2014-12-12T10:30:00"
-          end: "2014-12-12T12:30:00"
-        }
-        {
-          title: "Lunch"
-          start: "2014-12-12T12:00:00"
-        }
-        {
-          title: "Meeting"
-          start: "2014-12-12T14:30:00"
-        }
-        {
-          title: "Happy Hour"
-          start: "2014-12-12T17:30:00"
-        }
-        {
-          title: "Dinner"
-          start: "2014-12-12T20:00:00"
-        }
-        {
-          title: "Birthday Party"
-          start: "2014-12-13T07:00:00"
-        }
-        {
-          title: "Click for Google"
-          url: "http://google.com/"
-          start: "2014-12-28"
-        }
-      ]
-    # renderCalendar()
+      eventClick:(data, jsEvent, view)=>
+        @handleToggle(data)
+      events: @props.EventList
       )
   render: ->
     <div ref="calendar"></div>
-
+  renderOverlay:->
+    if not @state.isModalOpen
+      return <span />
+    <Modal bsStyle='primary' title={@state.modalContent.title} onRequestHide={@handleToggle}>
+      <div className='modal-body'>
+        <h4>地點：{@state.modalContent.location}</h4>
+        <p>{@state.modalContent.start_time+' ~ '+ @state.modalContent.end_time}</p>
+        {@state.modalContent.description}
+      </div>
+      <div className='modal-footer'>
+        <Button onClick={@handleToggle}>關閉</Button>
+      </div>
+    </Modal>
 
 module.exports = Calendar

@@ -14,18 +14,22 @@ Introduction = require './introduction'
 NotFound = require './components/404'
 
 Teacher = require './service/teacher'
-Post = require './service/post.coffee'
+Post = require './service/post'
+Event = require './service/event'
+
 Main = React.createClass
   displayName:'Main'
   getInitialState:->
     TEACHER_LIST:Teacher.getList()
     INITIAL_POST:Post.getList()
+    EVENT_LIST:Event.getList()
   render:->
     <div>
       <Navbar />
       <RouteHandler TeacherList={@state.TEACHER_LIST}
                     PostList={@state.INITIAL_POST.posts_dataset}
-                    InitialPosts={@state.INITIAL_POST.initial_posts}/>
+                    InitialPosts={@state.INITIAL_POST.initial_posts}
+                    EventList={@state.EVENT_LIST}/>
       <Footer />
     </div>
 routes =
