@@ -952,9 +952,6 @@
                                                 text-decoration: none;
                                         }
 
-                                                #header nav > ul > li a:hover {
-                                                        color: #ffffff;
-                                                }
 
                                         #header nav > ul > li:first-child {
                                                 margin-left: 0;
@@ -977,7 +974,8 @@
                                         }
                                 #header nav > ul > li > ul{
                                         display:none;
-                                        margin-top: -50px;
+                                        margin-top: -40px;
+                                        margin-left: -10px;
                                         list-style-type:none;
                                 }
                                         #header nav > ul > li > ul > li{
@@ -987,6 +985,9 @@
                                                 display:block;
                                         }
 
+                                                #header nav > ul > li > ul > li  a:hover {
+                                                        color: #635F5F;
+                                                }
                 #header .container {
                         position: relative;
                 }
