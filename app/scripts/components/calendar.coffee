@@ -3,6 +3,7 @@ React = require 'react/addons'
 ReactBootstrap = require 'react-bootstrap'
 Modal = ReactBootstrap.Modal
 OverlayMixin = ReactBootstrap.OverlayMixin
+PureRenderMixin = require('react/addons').addons.PureRenderMixin
 Button = ReactBootstrap.Button
 Calendar = React.createClass
   displayName : 'Calendar'
