@@ -71,7 +71,7 @@
   "dependencies": {
     "react": "^0.12.2",
     "react-addons": "^0.9.0",
-    "react-bootstrap": "^0.13.0",
+    "react-bootstrap": "git+https://github.com/yonaichin/react-bootstrap.git",
     "react-router": "^0.12.0"
   },
   "directories": {
