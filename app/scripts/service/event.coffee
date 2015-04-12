@@ -1,4 +1,4 @@
-API_HOST = 'http://ntpumis2015.ddns.net:8080/'
+API_HOST = 'http://ntpumis2015.ddns.net/api/'
 event =
   getList : ->
     list = {}
