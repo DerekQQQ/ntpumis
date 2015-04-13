@@ -29,7 +29,7 @@ PostDetail = React.createClass
         <p>標題： {@props.currentDetail.title}</p>
         <p>日期： {@props.currentDetail.created_at}</p>
         <p>截止日期： {@props.currentDetail.end_date}</p>
-        <pre>{_replaceCKEditorTag(@props.currentDetail.description_text)} </pre>
+        <pre>{@props.currentDetail.description} </pre>
       </blockquote>
 
 
@@ -53,7 +53,7 @@ Index = React.createClass
       when false then postDetail = null
 
     postsGeneral = $.map @props.InitialPosts.general,(val)=>
-      <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
+        <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
 
     postsConference = $.map @props.InitialPosts.conference,(val)=>
       <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
@@ -99,5 +99,3 @@ Index = React.createClass
     </div>
 module.exports = Index
 
-_replaceCKEditorTag =(str) ->
-  str.replace(/&nbsp;/gi,' ')
