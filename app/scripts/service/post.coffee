@@ -18,9 +18,9 @@ post =
 
       i = 0
       while i < 3
-        first_3_general.push post_general[i]
-        first_3_conference.push post_conference[i]
-        first_3_alumni.push post_alumni[i]
+        first_3_general.push post_general[i] if post_general[i]?
+        first_3_conference.push post_conference[i] if post_conference[i]?
+        first_3_alumni.push post_alumni[i] if post_alumni[i]?
         i++
       initial_posts = {
         'general':first_3_general
