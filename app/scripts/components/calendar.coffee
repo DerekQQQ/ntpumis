@@ -23,6 +23,7 @@ Calendar = React.createClass
         center:'title'
         right: 'month,agendaWeek,agendaDay'
       editable:false
+      timeFormat:'H:mm'
       eventClick:(data, jsEvent, view)=>
         @handleToggle(data)
       events: @props.EventList.map (val) ->
