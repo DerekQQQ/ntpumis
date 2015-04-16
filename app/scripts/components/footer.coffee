@@ -24,13 +24,13 @@ Footer = React.createClass
           <section className="4u 6u(medium) 12u$(small)">
             <h3>相關連結</h3>
             <ul className="alt">
-              <li><a href="http://www.ntpu.edu.tw/" target="_blank">國立臺北大學</a></li>
-              <li><a href="http://www.lib.ntpu.edu.tw/" target="_blank">國立臺北大學圖書館</a></li>
-              <li><a href="http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge" target="_blank">臺灣博碩士論文知識加值系統</a></li>
-              <li><a href="http://academic-journals.org/ecs/" target="_blank">電子商務研究期刊</a></li>
-              <li><a href="http://scholar.google.com.tw" target="_blank">Google 學術搜尋</a></li>
-              <li><a href="http://www.ntpu.edu.tw/files/studenthandbook.pdf" target="_blank" >臺北大學學生手冊</a></li>
-              <li><a href="http://www.mis.ntpu.edu.tw/files/ntpuiim_stu_man.pdf" target="_blank" >臺北大學資管所學生手冊</a></li>
+              <li><a target="_blank" href="http://www.ntpu.edu.tw/" target="_blank">國立臺北大學</a></li>
+              <li><a target="_blank" href="http://www.lib.ntpu.edu.tw/" target="_blank">國立臺北大學圖書館</a></li>
+              <li><a target="_blank" href="http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge" target="_blank">臺灣博碩士論文知識加值系統</a></li>
+              <li><a target="_blank" href="http://academic-journals.org/ecs/" target="_blank">電子商務研究期刊</a></li>
+              <li><a target="_blank" href="http://scholar.google.com.tw" target="_blank">Google 學術搜尋</a></li>
+              <li><a target="_blank" href="http://www.ntpu.edu.tw/files/studenthandbook.pdf" target="_blank" >臺北大學學生手冊</a></li>
+              <li><a target="_blank" href="http://www.mis.ntpu.edu.tw/files/ntpuiim_stu_man.pdf" target="_blank" >臺北大學資管所學生手冊</a></li>
             </ul>
           </section>
           <section className="4u 6u$(medium) 12u$(small)">
@@ -40,11 +40,9 @@ Footer = React.createClass
           <section className="4u$ 12u$(medium) 12u$(small)">
             <h3>聯絡資訊</h3>
             <ul className="icons">
-              <li><a href="#" className="icon rounded fa-twitter"><span className="label">Twitter</span></a></li>
-              <li><a href="#" className="icon rounded fa-facebook"><span className="label">Facebook</span></a></li>
-              <li><a href="#" className="icon rounded fa-pinterest"><span className="label">Pinterest</span></a></li>
-              <li><a href="#" className="icon rounded fa-google-plus"><span className="label">Google+</span></a></li>
-              <li><a href="#" className="icon rounded fa-linkedin"><span className="label">LinkedIn</span></a></li>
+              <li><a target="_blank" href="https://www.facebook.com/176780765671055" className="icon rounded fa-facebook"><span className="label">Facebook</span></a></li>
+              <li><a target="_blank" href="https://picasaweb.google.com/ntpuimis" className="icon rounded fa-picture-o"><span className="label">Photos</span></a></li>
+              <li>所辦助教 : 鄧雅燕 助教</li>
             </ul>
             <ul className="tabular">
               <li>
