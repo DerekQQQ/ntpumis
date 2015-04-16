@@ -7,6 +7,7 @@ Copyright = React.createClass
        <li><i className="fa fa-copyright"></i> NTPUMIS All rights reserved.</li>
        <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
        <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+       <li>Developed by : <a href="http://github.com/yonaichin">yonaichin</a>, kapiobhee</li>
      </ul>
 Footer = React.createClass
   displayName: 'Footer'
