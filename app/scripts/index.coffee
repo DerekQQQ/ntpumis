@@ -28,8 +28,8 @@ PostDetail = React.createClass
       <h4> 公告內容 <i className="fa fa-times pull-right ios_clickable"  onClick={@clickHandler}></i></h4>
       <blockquote className="list">
         <p>標題： {@props.currentDetail.title}</p>
-        <p>日期： {@props.currentDetail.created_at}</p>
-        <p>截止日期： {@props.currentDetail.end_date}</p>
+        <p>日期： {if @props.currentDetail.start_time then @props.currentDetail.start_time else @props.currentDetail.created_at}</p>
+        {'截止日期： '+@props.currentDetail.end_date if @props.currentDetail.end_date? }
         <pre>{@props.currentDetail.description} </pre>
       </blockquote>
       {attachment}
@@ -59,7 +59,7 @@ Index = React.createClass
     postsConference = $.map @props.InitialPosts.conference,(val)=>
       <li><span className="label label-info"> {val.created_at}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li>
     events = $.map @props.EventList,(val,idx)=>
-      <li><span className="label label-info"> {val.start_time.substr(0,10)}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li> if idx <= 2
+      <li><span className="label label-info"> {val.created_at.substr(0,10)}</span>  <a onClick={@detailHandler} data-detail={JSON.stringify(val)} >{val.title}</a> </li> if idx <= 2
     <div>
     <Banner bannerStyle='welcome'/>
     <section id="latestNews" className="wrapper style2 align-center">
