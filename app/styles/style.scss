@@ -1152,4 +1152,24 @@ text-align:left;
   text-indent:45px;
   font-style:normal;
 }
-
+.jumbotron{
+  //background-image: url('http://www.ntpu.edu.tw/admin/a8/org/a8-4/files/announce/20091217125025.jpg');
+  color:white;
+  background-image: url('../images/jumbotron_bg.jpg');
+  background-size: cover;
+    height: 446px;
+  a.button{
+    margin-top:48%;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 2px solid;
+    background: transparent;
+  }
+  a.button:hover {
+          background-color: rgba(144, 144, 144, 0.4);
+  }
+}
+.white{
+  color:white;
+}

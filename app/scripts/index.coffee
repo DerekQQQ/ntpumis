@@ -23,6 +23,7 @@ PostDetail = React.createClass
     console.log $(@getDOMNode())
     @props.disableDetail()
   render: ->
+    attachment = <a className="alt button icon fa-download small fit" target="_blank" href={@props.currentDetail.download_link}>附件</a> if not  _.isEmpty(@props.currentDetail.download_link)
     <div >
       <h4> 公告內容 <i className="fa fa-times pull-right ios_clickable"  onClick={@clickHandler}></i></h4>
       <blockquote className="list">
@@ -31,7 +32,7 @@ PostDetail = React.createClass
         <p>截止日期： {@props.currentDetail.end_date}</p>
         <pre>{@props.currentDetail.description} </pre>
       </blockquote>
-
+      {attachment}
 
     </div>
 

@@ -1,9 +1,10 @@
 React = require 'react/addons'
+Router = require 'react-router'
+Link = Router.Link
 Banner = React.createClass
   displayName: 'Banner'
   render : ->
     bannerStyle =  if @props.bannerStyle then @props.bannerStyle else 'banner'
-    console.log bannerStyle
 
 
     if bannerStyle is 'welcome'
@@ -12,7 +13,7 @@ Banner = React.createClass
         <p>Graduate Institute of Information Management, NTPU</p>
         <ul className="actions">
           <li>
-            <a href="#" className="button big">加入我們</a>
+            <a href="#/admission" className="button big">加入我們</a>
           </li>
         </ul>
       </section>

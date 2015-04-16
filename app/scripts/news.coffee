@@ -49,7 +49,7 @@ Thread = React.createClass
 Detail = React.createClass
   displayName:'Detail'
   render:->
-    attachment = <a className="pull-right" target="_blank" href={@props.listDetail.download_link}><i className="fa fa-download"> 附件下載</i></a> if not  _.isEmpty(@props.listDetail.download_link)
+    attachment = <a className="alt button icon fa-download fit" target="_blank" href={@props.listDetail.download_link}>附件</a> if not  _.isEmpty(@props.listDetail.download_link)
 
     <section id="detail" className="feature 5u 12u$(small)">
       <h3 className="title">公告內容</h3>
