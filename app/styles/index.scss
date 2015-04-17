@@ -17,3 +17,16 @@ a {
   overflow-y:scroll;
   width:100%;
 }
+
+table.scrollable-table{
+ height:400px;
+}
+tr.scrollable-table {
+  width: 90%;
+display: inline-table;
+}
+tbody.scrollable-table{
+  overflow-y: scroll;
+  height: 400px;
+  position: absolute;
+}

@@ -31,6 +31,7 @@ Footer = React.createClass
               <li><a target="_blank" href="http://scholar.google.com.tw" target="_blank">Google 學術搜尋</a></li>
               <li><a target="_blank" href="http://www.ntpu.edu.tw/files/studenthandbook.pdf" target="_blank" >臺北大學學生手冊</a></li>
               <li><a target="_blank" href="http://www.mis.ntpu.edu.tw/files/ntpuiim_stu_man.pdf" target="_blank" >臺北大學資管所學生手冊</a></li>
+              <li><a href="/#/form">常用表單</a></li>
             </ul>
           </section>
           <section className="4u 6u$(medium) 12u$(small)">

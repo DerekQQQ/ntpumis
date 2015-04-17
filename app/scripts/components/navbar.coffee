@@ -21,14 +21,7 @@ Navbar = React.createClass
           <li><Link to="introduction">本所簡介</Link></li>
           <li><Link to="admission">招生資訊</Link></li>
           <li><Link to="publication">學術研究</Link></li>
-          <li><a>資管所通訊</a>
-            <ul>
-              <li><a target="_blank" href={host+'newspaper/2015_01.pdf'}>2015-01</a></li>
-              <li><a target="_blank" href={host+'newspaper/2013_01.htm'}>2013-01</a></li>
-              <li><a target="_blank" href={host+'newspaper/2012_05.htm'}>2012-05</a></li>
-              <li><a target="_blank" href={host+'newspaper/2012_04.htm'}>2012-04</a></li>
-            </ul>
-          </li>
+          <li><Link to="newspaper">資管所通訊</Link></li>
         </ul>
       </nav>
     </header>

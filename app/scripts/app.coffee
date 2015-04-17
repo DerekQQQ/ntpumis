@@ -13,6 +13,8 @@ Index = require './index'
 Introduction = require './introduction'
 Admission = require './admission'
 Publication = require './publication'
+Newspaper = require './newspaper'
+Forms = require './form'
 NotFound = require './components/404'
 ServiceUnavailable = require './components/500'
 # require api services
@@ -54,6 +56,8 @@ routes =
     <Route name="introduction" handler={Introduction}/>
     <Route name="admission" handler={Admission}/>
     <Route name="publication" handler={Publication}/>
+    <Route name="newspaper" handler={Newspaper}/>
+    <Route name="form" handler={Forms}/>
     <DefaultRoute handler={Index}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
