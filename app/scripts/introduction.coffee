@@ -11,7 +11,7 @@ TeachersList = React.createClass
   render:->
     teacherList = @props.TeacherList.map (val,idx)=>
       if idx%2 is 0
-        <p className="12u$ list test">
+        <p className="12u$ list">
           <span className="image left">
             <img src={val.image_url} className="teacher_icon" />
           </span>
@@ -22,7 +22,7 @@ TeachersList = React.createClass
           <br>專長領域：{val.domain}</br>
         </p>
       else
-        <p className="12u$ test2">
+        <p className="7u$ show_teacher">
           <span className="image right">
             <img src={val.image_url} className="teacher_icon" />
           </span>
@@ -115,7 +115,7 @@ Faculty = React.createClass
                   本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，以及行政人員1名。
                   </blockquote>
                   <h3>專任教師</h3>
-                  <div className="10u">
+                  <div className="12u">
                     <TeachersList TeacherList={@props.TeacherList} />
                   </div>
                 </section>
