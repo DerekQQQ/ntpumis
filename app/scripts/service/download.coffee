@@ -1,4 +1,4 @@
-API_HOST = 'http://ntpumis2015.ddns.net/api/'
+API_HOST = process.env.API_HOST
 download =
   getList : ->
     list = {}
