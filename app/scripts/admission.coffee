@@ -61,5 +61,4 @@ Main = React.createClass
       <Content AdmissionList={@props.DownloadList.enrollment}
                ExaminationList={@props.DownloadList.examination}/>
     </div>
-#module.exports = React.render(Main(), document.querySelector('#app'))
 module.exports = Main

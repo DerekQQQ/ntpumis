@@ -12,6 +12,7 @@ News = require './news'
 Index = require './index'
 Introduction = require './introduction'
 Admission = require './admission'
+Publication = require './publication'
 NotFound = require './components/404'
 ServiceUnavailable = require './components/500'
 # require api services
@@ -19,6 +20,7 @@ Teacher = require './service/teacher'
 Post = require './service/post'
 Event = require './service/event'
 Download = require './service/download'
+Thesis = require './service/thesis'
 
 Main = React.createClass
   displayName:'Main'
@@ -29,8 +31,10 @@ Main = React.createClass
     INITIAL_POST:Post.getList()
     EVENT_LIST:Event.getList()
     DOWNLOAD_LIST:Download.getList()
+    THESIS_LIST:Thesis.getListByYear('thesis')
+    PUBLICATION_LIST:Thesis.getListByYear()
   render:->
-    if _.isEmpty(Teacher.getList())
+    if _.isEmpty(@state.TEACHER_LIST)
       <ServiceUnavailable />
     else
       <div>
@@ -39,6 +43,8 @@ Main = React.createClass
                       PostList={@state.INITIAL_POST.posts_dataset}
                       InitialPosts={@state.INITIAL_POST.initial_posts}
                       DownloadList={@state.DOWNLOAD_LIST}
+                      ThesisList={@state.THESIS_LIST}
+                      PublicationList={@state.PUBLICATION_LIST}
                       EventList={@state.EVENT_LIST}/>
         <Footer />
       </div>
@@ -47,6 +53,7 @@ routes =
     <Route name="news" handler={News}/>
     <Route name="introduction" handler={Introduction}/>
     <Route name="admission" handler={Admission}/>
+    <Route name="publication" handler={Publication}/>
     <DefaultRoute handler={Index}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
