@@ -246,7 +246,6 @@ Content = React.createClass
 Introduction = React.createClass
         displayName:'Introduction'
         render:->
-                console.log @props.TeacherList
                 <div>
                         <Banner />
                         <Content TeacherList={@props.TeacherList} />
