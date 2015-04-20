@@ -19,6 +19,7 @@ Navbar = React.createClass
           <li><Link to="index">首頁</Link></li>
           <li><Link to="news">最新消息</Link></li>
           <li><Link to="introduction">本所簡介</Link></li>
+          <li><Link to="course">課程資訊</Link></li>
           <li><Link to="admission">招生資訊</Link></li>
           <li><Link to="publication">學術研究</Link></li>
           <li><Link to="newspaper">資管所通訊</Link></li>
