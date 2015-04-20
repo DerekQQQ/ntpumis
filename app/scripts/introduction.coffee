@@ -10,11 +10,13 @@ TeachersList = React.createClass
   displayName:'TeachersList'
   render:->
     teacherList = @props.TeacherList.map (val,idx)=>
+      is_chair = '現任所長' if val.is_chair is true
       if idx%2 is 0
         <p className="12u$ list">
           <span className="image left">
             <img src={val.image_url} className="teacher_icon" />
           </span>
+          {is_chair}
           <br><b>{val.name}</b> <i>{val.title}</i></br>
           <br>辦公室：{val.office}</br>
           <br>E-mail：{val.email}</br>
@@ -26,6 +28,7 @@ TeachersList = React.createClass
           <span className="image right">
             <img src={val.image_url} className="teacher_icon" />
           </span>
+          {is_chair}
           <br><b>{val.name}</b> <i>{val.title}</i></br>
           <br>辦公室：{val.office}</br>
           <br>E-mail：{val.email}</br>
@@ -218,18 +221,6 @@ Curriculum = React.createClass
                               </tbody>
                             </table>
                         </div>
-                        </blockquote>
-                        <h3>五、各年級課程科目規劃表</h3>
-                        <blockquote>
-                        <ul className="alt">
-                          <li><a href="http://www.mis.ntpu.edu.tw/files/syllabus/syllabus_103.pdf">103年課程規科目規劃表</a></li>
-                          <li><a href="http://www.mis.ntpu.edu.tw/files/syllabus/syllabus_102.pdf">102年課程規科目規劃表</a></li>
-                          <li><a href="http://www.mis.ntpu.edu.tw/files/syllabus/syllabus_101.pdf">101年課程規科目規劃表</a></li>
-                        </ul>
-                        </blockquote>
-                        <h3>六、課程規劃圖</h3>
-                        <blockquote>
-                        <div className="mid"><img src="http://www.mis.ntpu.edu.tw/images/curriculum_mapping.jpg" /></div>
                         </blockquote>
                 </div>
                 </section>

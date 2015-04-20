@@ -13,7 +13,6 @@ Content = React.createClass
       <tr className="scrollable-table">
         <td>{val.title}<a target="_blank" href={val.link} className="button icon alt pull-right fa-download small">下載</a></td>
       </tr>
-   newspaperList.reverse()
    <section id="two" className="wrapper style2 align-center">
      <div className="container">
         <header>
