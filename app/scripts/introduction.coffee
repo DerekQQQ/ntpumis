@@ -6,37 +6,67 @@ Link = Router.Link
 Banner = require './components/banner'
 ReactBootstrap = require 'react-bootstrap'
 
+
+
 TeachersList = React.createClass
   displayName:'TeachersList'
   render:->
-    teacherList = @props.TeacherList.map (val,idx)=>
-      is_chair = '現任所長' if val.is_chair is true
-      if idx%2 is 0
-        <p className="12u$ list">
-          <span className="image left">
-            <img src={val.image_url} className="teacher_icon" />
-          </span>
-          {is_chair}
-          <br><b>{val.name}</b> <i>{val.title}</i></br>
-          <br>辦公室：{val.office}</br>
-          <br>E-mail：{val.email}</br>
-          <br>學歷：{val.degree}</br>
-          <br>專長領域：{val.domain}</br>
-        </p>
-      else
-        <p className="7u$ show_teacher">
-          <span className="image right">
-            <img src={val.image_url} className="teacher_icon" />
-          </span>
-          {is_chair}
-          <br><b>{val.name}</b> <i>{val.title}</i></br>
-          <br>辦公室：{val.office}</br>
-          <br>E-mail：{val.email}</br>
-          <br>學歷：{val.degree}</br>
-          <br>專長領域：{val.domain}</br>
-        </p>
+    #split teachers into 5 different type according to its employ_type
+    employ_type_0=_.where(@props.TeacherList,{employ_type:0})
+    employ_type_1=_.where(@props.TeacherList,{employ_type:1})
+    employ_type_2=_.where(@props.TeacherList,{employ_type:2})
+    employ_type_3=_.where(@props.TeacherList,{employ_type:3})
+    employ_type_4=_.where(@props.TeacherList,{employ_type:4})
+
+    employ_type_0_list = _renderTeacherList(_filterTeacher(employ_type_0))
+    employ_type_1_list = _renderTeacherList(_filterTeacher(employ_type_1))
+    employ_type_2_list = _renderTeacherList(_filterTeacher(employ_type_2))
+    employ_type_3_list = _renderTeacherList(_filterTeacher(employ_type_3))
+    employ_type_4_list = _renderTeacherList(_filterTeacher(employ_type_4))
+
+    EMP_0_LIST =
+      <div>
+        <h3>專任教師</h3>
+        <div className="12u">
+          {employ_type_0_list}
+        </div>
+      </div>
+    EMP_1_LIST =
+      <div>
+        <h3>兼任教師</h3>
+        <div className="12u">
+          {employ_type_1_list}
+        </div>
+      </div>
+    EMP_2_LIST =
+      <div>
+        <h3>行政人員</h3>
+        <div className="12u">
+          {employ_type_2_list}
+        </div>
+      </div>
+    EMP_3_LIST =
+      <div>
+        <h3>他系教師</h3>
+        <div className="12u">
+          {employ_type_3_list}
+        </div>
+      </div>
+    EMP_4_LIST =
+      <div>
+        <h3>客座教授</h3>
+        <div className="12u">
+          {employ_type_4_list}
+        </div>
+      </div>
+
+    # final render TeacherList
     <div>
-      {teacherList}
+      {EMP_0_LIST if employ_type_0.length > 0}
+      {EMP_1_LIST if employ_type_1.length > 0}
+      {EMP_2_LIST if employ_type_2.length > 0}
+      {EMP_3_LIST if employ_type_3.length > 0}
+      {EMP_4_LIST if employ_type_4.length > 0}
     </div>
 About = React.createClass
         displayName:'About'
@@ -117,10 +147,7 @@ Faculty = React.createClass
                   <blockquote>
                   本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，以及行政人員1名。
                   </blockquote>
-                  <h3>專任教師</h3>
-                  <div className="12u">
-                    <TeachersList TeacherList={@props.TeacherList} />
-                  </div>
+                  <TeachersList TeacherList={@props.TeacherList} />
                 </section>
 
 Curriculum = React.createClass
@@ -242,3 +269,57 @@ Introduction = React.createClass
                         <Content TeacherList={@props.TeacherList} />
                 </div>
 module.exports = Introduction
+
+
+# filter teachers into 4 types according to its title_priority
+_filterTeacher = (teacherArr)->
+  isChairArr=[]
+  teacher_type_0=[]
+  teacher_type_1=[]
+  teacher_type_2=[]
+  teacher_type_3=[]
+
+  teacherArr.map (val)->
+    if val.is_chair
+      isChairArr.push val
+    else
+      switch val.title_priority
+        when 0
+          teacher_type_0.push val
+        when 1
+          teacher_type_1.push val
+        when 2
+          teacher_type_2.push val
+        when 3
+          teacher_type_3.push val
+
+  teacherList = isChairArr.concat(teacher_type_0).concat(teacher_type_1).concat(teacher_type_2).concat(teacher_type_3)
+
+#render teacher list
+_renderTeacherList = (teacherArr)->
+  teacherArr.map (val,idx) =>
+    is_chair = '現任所長' if val.is_chair is true
+    if idx%2 is 0
+      <p className="12u$ list">
+        <span className="image left">
+          <img src={val.image_url} className="teacher_icon" />
+        </span>
+        {is_chair}
+        <br><b>{val.name}</b> <i>{val.title}</i></br>
+        <br>辦公室：{val.office}</br>
+        <br>E-mail：{val.email}</br>
+        <br>學歷：{val.degree}</br>
+        <br>專長領域：{val.domain}</br>
+      </p>
+    else
+      <p className="7u$ show_teacher">
+        <span className="image right">
+          <img src={val.image_url} className="teacher_icon" />
+        </span>
+        {is_chair}
+        <br><b>{val.name}</b> <i>{val.title}</i></br>
+        <br>辦公室：{val.office}</br>
+        <br>E-mail：{val.email}</br>
+        <br>學歷：{val.degree}</br>
+        <br>專長領域：{val.domain}</br>
+      </p>
