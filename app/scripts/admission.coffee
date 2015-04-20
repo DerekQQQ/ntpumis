@@ -15,7 +15,6 @@ Table = React.createClass
       <tr>
         <td>{val.title}<a target="_blank" href={val.link} className="button icon alt pull-right fa-download small">下載</a></td>
       </tr>
-    tableContent.reverse()
     <div>
       <div className="list">
          <table className="alt">

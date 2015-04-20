@@ -13,12 +13,10 @@ Content = React.createClass
       <tr>
         <td>{val.title}<a target="_blank" href={val.link} className="button icon alt pull-right fa-download small">下載</a></td>
       </tr>
-   courseList.reverse()
    commonList = @props.CommonList.map (val,idx) ->
       <tr>
         <td>{val.title}<a target="_blank" href={val.link} className="button icon alt pull-right fa-download small">下載</a></td>
       </tr>
-   commonList.reverse()
    <section id="two" className="wrapper style2 align-center">
      <div className="container">
         <header>
