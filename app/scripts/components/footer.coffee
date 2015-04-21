@@ -16,6 +16,7 @@ Footer = React.createClass
       'center': '24.944582, 121.369743'
       'zoom': 15
       'disableDefaultUI': true
+      'scrollwheel':false
       'draggable': false
   render : ->
     <footer id="footer">
