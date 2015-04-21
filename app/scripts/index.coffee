@@ -71,7 +71,7 @@ Index = React.createClass
         {postDetail}
         <div className="row modal-container">
           <section id="post_1" className="feature 4u 12u$(small)">
-            <img className="image fit" src="images/pic01.jpg" alt="" />
+            <img className="image fit" src="images/pic_01.jpg" alt="" />
             <h3 className="title">所上公告</h3>
              <ul className="alt list">
                {postsGeneral}
@@ -79,7 +79,7 @@ Index = React.createClass
             <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
           <section id="post_2" className="feature 4u 12u$(small)">
-            <img className="image fit" src="images/pic02.jpg" alt="" />
+            <img className="image fit" src="images/pic_02.jpg" alt="" />
             <h3 className="title">學術公告</h3>
             <ul className="alt list">
                {postsConference}
@@ -87,7 +87,7 @@ Index = React.createClass
             <Link to="news"><button className="button alt small">了解更多</button></Link>
           </section>
           <section id="post_3" className="feature 4u$ 12u$(small)">
-            <img className="image fit" src="images/pic03.jpg" alt="" />
+            <img className="image fit" src="images/pic_03.jpg" alt="" />
             <h3 className="title">所上活動 ＆ 專題演講 </h3>
              <ul className="alt list">
                {events}
