@@ -1,12 +1,15 @@
-NTPU_MIS
+NTPU MIS
 =====================
+This project is the website of graduate institute of Information Management, Natational Taipei University.
+
+This is an frontend project developed with the framework [React.js](https://facebook.github.io/react/), designed by [TEMPLATED](http://templated.co/)
+
+Service is required by the backend project [NTPUMIS_BE](https://github.com/yonaichin/ntpumis_be).
 
 
-## key setting
-1. coffee script
-2. reactjs
-3. browserify
-4. compass
+
+
+
 
 # Install
 
