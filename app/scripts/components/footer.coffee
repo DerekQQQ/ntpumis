@@ -25,6 +25,8 @@ Footer = React.createClass
           <section className="4u 6u(medium) 12u$(small)">
             <h3>相關連結</h3>
             <ul className="alt">
+              <li><a target="_blank" href="http://www.mis.ntpu.edu.tw/en/" target="_blank">NTPU English Website</a></li>
+              <li><a target="_blank" href="http://www.ntpu.edu.tw/mis/" target="_blank">國立臺北大學資管所舊所網</a></li>
               <li><a target="_blank" href="http://www.ntpu.edu.tw/" target="_blank">國立臺北大學</a></li>
               <li><a target="_blank" href="http://www.lib.ntpu.edu.tw/" target="_blank">國立臺北大學圖書館</a></li>
               <li><a target="_blank" href="http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge" target="_blank">臺灣博碩士論文知識加值系統</a></li>
