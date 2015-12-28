@@ -47,6 +47,9 @@ Content = React.createClass
             <TabPane eventKey={2} tab="歷屆考題">
               <Table dataset={@props.ExaminationList}/>
             </TabPane>
+            <TabPane eventKey={3} tab="一貫修讀學、碩士學位">
+              <Table dataset={@props.FiveYearEduList}/>
+            </TabPane>
           </TabbedArea>
           </section>
         </div>
@@ -58,6 +61,7 @@ Main = React.createClass
     <div>
       <Banner/>
       <Content AdmissionList={@props.DownloadList.enrollment}
-               ExaminationList={@props.DownloadList.examination}/>
+               ExaminationList={@props.DownloadList.examination}
+               FiveYearEduList={@props.DownloadList.fiveyear} />
     </div>
 module.exports = Main
