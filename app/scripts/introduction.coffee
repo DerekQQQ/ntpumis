@@ -105,19 +105,19 @@ About = React.createClass
                                         <td align="center">考試別</td><td colSpan="2"><div align="center">錄取人數</div></td><td>考試科目</td><td>百分比</td>
                                 </tr>
                                 <tr>
-                                        <td rowSpan="2" className="mid">甄試</td><td rowSpan="2" colSpan="2" className="mid">7</td><td>資料審查</td><td>50%</td>
+                                        <td rowSpan="2" className="mid">甄試</td><td rowSpan="2" colSpan="2" className="mid">6</td><td>資料審查</td><td>50%</td>
                                 </tr>
                                 <tr>
                                         <td>口試</td><td>50%</td>
                                 </tr>
                                 <tr>
-                                        <td rowSpan="4" className="mid">一般招生</td><td rowSpan="2">甲</td><td rowSpan="4" className="mid">8(依選考該組人數佔總報考人數之比例分配)</td><td>計算機概論</td><td>50%</td>
+                                        <td rowSpan="4" className="mid">一般招生</td><td rowSpan="2" className="mid">甲</td><td rowSpan="2" className="mid">6</td><td>計算機概論</td><td>50%</td>
                                 </tr>
                                 <tr>
                                         <td>選考(2選1)：<br/>1.管理資訊系統<br/>2. 資料結構</td><td>50%</td>
                                 </tr>
                                 <tr>
-                                        <td rowSpan="2">乙</td><td>資料審查</td><td>50%</td>
+                                        <td rowSpan="2" className="mid">乙</td><td rowSpan="2" className="mid">3</td><td>資料審查</td><td>50%</td>
                                 </tr>
                                 <tr>
                                         <td>口試</td><td>50%</td>
