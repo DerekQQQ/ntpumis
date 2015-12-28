@@ -2,5 +2,5 @@
   "NODE_ENV": "development",
   "app_title": "國立臺北大學資訊管理所",
   "react": "react-with-addons",
-  "API_HOST":"//www.im.ntpu.edu.tw/api/"
+  "API_HOST":"//www.mis.ntpu.edu.tw:8080/"
 }
