@@ -35,14 +35,14 @@ TeachersList = React.createClass
       </div>
     EMP_1_LIST =
       <div>
-        <h3>兼任教師</h3>
+        <h3>合聘教師</h3>
         <div className="12u">
           {employ_type_1_list}
         </div>
       </div>
     EMP_2_LIST =
       <div>
-        <h3>行政人員</h3>
+        <h3>兼任教師</h3>
         <div className="12u">
           {employ_type_2_list}
         </div>
@@ -56,18 +56,19 @@ TeachersList = React.createClass
       </div>
     EMP_4_LIST =
       <div>
-        <h3>客座教授</h3>
+        <h3>行政人員</h3>
         <div className="12u">
           {employ_type_4_list}
         </div>
       </div>
     EMP_5_LIST =
       <div>
-        <h3>合娉教師</h3>
+        <h3>客座教授</h3>
         <div className="12u">
           {employ_type_5_list}
         </div>
       </div>
+    
 
     # final render TeacherList
     <div>
@@ -155,7 +156,7 @@ Faculty = React.createClass
                     <h2>師資與研究室</h2>
                   </header>
                   <blockquote>
-                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人、合娉教師1名，以及行政人員1名。
+                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人、合聘教師1名，以及行政人員1名。
                   </blockquote>
                   <TeachersList TeacherList={@props.TeacherList} />
                 </section>
