@@ -17,12 +17,14 @@ TeachersList = React.createClass
     employ_type_2=_.where(@props.TeacherList,{employ_type:2})
     employ_type_3=_.where(@props.TeacherList,{employ_type:3})
     employ_type_4=_.where(@props.TeacherList,{employ_type:4})
+    employ_type_5=_.where(@props.TeacherList,{employ_type:5})
 
     employ_type_0_list = _renderTeacherList(_filterTeacher(employ_type_0))
     employ_type_1_list = _renderTeacherList(_filterTeacher(employ_type_1))
     employ_type_2_list = _renderTeacherList(_filterTeacher(employ_type_2))
     employ_type_3_list = _renderTeacherList(_filterTeacher(employ_type_3))
     employ_type_4_list = _renderTeacherList(_filterTeacher(employ_type_4))
+    employ_type_5_list = _renderTeacherList(_filterTeacher(employ_type_5))
 
     EMP_0_LIST =
       <div>
@@ -59,6 +61,13 @@ TeachersList = React.createClass
           {employ_type_4_list}
         </div>
       </div>
+    EMP_5_LIST =
+      <div>
+        <h3>合娉教師</h3>
+        <div className="12u">
+          {employ_type_5_list}
+        </div>
+      </div>
 
     # final render TeacherList
     <div>
@@ -67,6 +76,7 @@ TeachersList = React.createClass
       {EMP_2_LIST if employ_type_2.length > 0}
       {EMP_3_LIST if employ_type_3.length > 0}
       {EMP_4_LIST if employ_type_4.length > 0}
+      {EMP_5_LIST if employ_type_5.length > 0}
     </div>
 About = React.createClass
         displayName:'About'
@@ -145,7 +155,7 @@ Faculty = React.createClass
                     <h2>師資與研究室</h2>
                   </header>
                   <blockquote>
-                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，以及行政人員1名。
+                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人、合娉教師1名，以及行政人員1名。
                   </blockquote>
                   <TeachersList TeacherList={@props.TeacherList} />
                 </section>
