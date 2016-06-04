@@ -1010,6 +1010,8 @@
                 color: #ffffff;
                 padding: 16em 0em 14em;
                 text-align: center;
+                padding-top: 230px;
+                height: 543px;
         }
 
                 #banner h2 {
@@ -1033,6 +1035,7 @@
                         background-color: transparent;
                         border: 1px solid #ffffff;
                         font-weight: 300;
+                        visibility: hidden;
                 }
 
                         #banner .button:hover {
