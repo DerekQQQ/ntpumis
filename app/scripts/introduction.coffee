@@ -322,6 +322,7 @@ _renderTeacherList = (teacherArr)->
         <br>E-mail：{val.email}</br>
         <br>學歷：{val.degree}</br>
         <br>專長領域：{val.domain}</br>
+        <br><a href={val.website}>個人網站</a></br>
       </p>
     else
       <p className="7u$ show_teacher">
@@ -335,4 +336,5 @@ _renderTeacherList = (teacherArr)->
         <br>E-mail：{val.email}</br>
         <br>學歷：{val.degree}</br>
         <br>專長領域：{val.domain}</br>
+        <br><a href={val.website}>個人網站</a></br>
       </p>
