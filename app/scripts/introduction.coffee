@@ -318,6 +318,7 @@ _renderTeacherList = (teacherArr)->
         {is_chair}
         <br><b>{val.name}</b> <i>{val.title}</i></br>
         <br>辦公室：{val.office}</br>
+        <br>分機：{val.extension}</br>
         <br>E-mail：{val.email}</br>
         <br>學歷：{val.degree}</br>
         <br>專長領域：{val.domain}</br>
@@ -330,6 +331,7 @@ _renderTeacherList = (teacherArr)->
         {is_chair}
         <br><b>{val.name}</b> <i>{val.title}</i></br>
         <br>辦公室：{val.office}</br>
+        <br>分機：{val.extension}</br>
         <br>E-mail：{val.email}</br>
         <br>學歷：{val.degree}</br>
         <br>專長領域：{val.domain}</br>
