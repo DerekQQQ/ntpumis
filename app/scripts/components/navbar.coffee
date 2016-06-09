@@ -23,6 +23,7 @@ Navbar = React.createClass
           <li><Link to="admission">招生資訊</Link></li>
           <li><Link to="publication">學術研究</Link></li>
           <li><Link to="newspaper">資管所通訊</Link></li>
+          <li><a href="http://goo.gl/forms/LlMbFWXwzyxiYgV52">畢業校友回填</a></li>
         </ul>
       </nav>
     </header>
