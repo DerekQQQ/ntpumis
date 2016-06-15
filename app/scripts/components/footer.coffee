@@ -54,7 +54,7 @@ Footer = React.createClass
               </li>
               <li>
                 <h3><i className="icon rounded fa-envelope-o"></i></h3>
-                <a href="#">yyteng@mail.ntpu.edu.tw</a>
+                <a href="mailto:yyteng@mail.ntpu.edu.tw">yyteng@mail.ntpu.edu.tw</a>
               </li>
               <li>
                 <h3><i className="icon rounded fa-phone"></i></h3>
