@@ -156,7 +156,7 @@ Faculty = React.createClass
                     <h2>師資與研究室</h2>
                   </header>
                   <blockquote>
-                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，合聘教師1名，以及行政人員1名。
+                  本所目前有專任教師6名，來自本校各系所與學術、企業界深具實務經驗的兼任教師10人，合聘教師1名，他系教師5名，以及行政人員1名。
                   </blockquote>
                   <TeachersList TeacherList={@props.TeacherList} />
                 </section>
