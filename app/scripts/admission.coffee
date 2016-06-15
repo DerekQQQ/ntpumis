@@ -36,7 +36,7 @@ Content = React.createClass
             <Jumbotron>
 
               <h2 className="white">招生資訊系統</h2>
-              <a className="button fit" target="_blank" href="http://exam.ntpu.edu.tw/">加入我們</a>
+              <a className="button fit" target="_blank" href="http://exam.ntpu.edu.tw/">北大招生資訊網</a>
             </Jumbotron>
           </section>
           <section className="feature 7u 12u$(small)">
